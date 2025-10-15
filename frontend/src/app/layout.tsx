@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Splash from "./components/Splash";
 
 const ibmPlex = IBM_Plex_Sans({
     variable: "--font-ibm-plex",
@@ -16,7 +19,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
     title: "Vemo – Flashcards thông minh như Anki | Học mọi thứ dễ dàng",
-    description: "Vemo là ứng dụng flashcards PWA giúp bạn ghi nhớ mọi thứ nhanh chóng với spaced repetition như Anki. Học ngôn ngữ, công thức, kiến thức – miễn phí, không giới hạn!",
+    description:
+        "Vemo là ứng dụng flashcards PWA giúp bạn ghi nhớ mọi thứ nhanh chóng với spaced repetition như Anki. Học ngôn ngữ, công thức, kiến thức – miễn phí, không giới hạn!",
     generator: "Next.js",
     manifest: "/manifest.json",
 
@@ -122,13 +126,19 @@ export default function RootLayout({
             <head>
                 {/* ===== PWA META TAGS ===== */}
                 <meta name="apple-mobile-web-app-capable" content="yes" />
-                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+                <meta
+                    name="apple-mobile-web-app-status-bar-style"
+                    content="black-translucent"
+                />
                 <meta name="apple-mobile-web-app-title" content="Vemo" />
 
                 {/* ===== THEME & PWA ===== */}
                 <meta name="theme-color" content="#000000" />
                 <meta name="msapplication-TileColor" content="#000000" />
-                <meta name="msapplication-config" content="/browserconfig.xml" />
+                <meta
+                    name="msapplication-config"
+                    content="/browserconfig.xml"
+                />
 
                 {/* ===== STRUCTURED DATA ===== */}
                 <script
@@ -137,26 +147,31 @@ export default function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "MobileApplication",
-                            "name": "Vemo – Flashcards App",
-                            "applicationCategory": "EducationalApplication",
-                            "operatingSystem": "Android, iOS, Web",
-                            "description": "Ứng dụng flashcards thông minh giúp bạn học mọi thứ với spaced repetition như Anki.",
-                            "offers": {
+                            name: "Vemo – Flashcards App",
+                            applicationCategory: "EducationalApplication",
+                            operatingSystem: "Android, iOS, Web",
+                            description:
+                                "Ứng dụng flashcards thông minh giúp bạn học mọi thứ với spaced repetition như Anki.",
+                            offers: {
                                 "@type": "Offer",
-                                "price": "0",
-                                "priceCurrency": "USD",
+                                price: "0",
+                                priceCurrency: "USD",
                             },
-                            "aggregateRating": {
+                            aggregateRating: {
                                 "@type": "AggregateRating",
-                                "ratingValue": "4.8",
-                                "ratingCount": "2500",
+                                ratingValue: "4.8",
+                                ratingCount: "2500",
                             },
                         }),
                     }}
                 />
             </head>
             <body className={`${ibmPlex.variable} antialiased`}>
-                {children}
+                <Splash />
+                
+                <Header />
+                <main className="main container mx-auto p-4">{children}</main>
+                <Footer />
             </body>
         </html>
     );

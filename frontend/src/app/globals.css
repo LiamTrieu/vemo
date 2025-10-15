@@ -1,19 +1,41 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* ======== Biến gốc (Light mode mặc định) ======== */
 :root {
-    --background: #0d1117;
-    --foreground: #ffffff;
-    --font-sans: var(--font-ibm-plex); /* dùng IBM Plex Sans */
+  --background: #ffffff;
+  --foreground: #0d1117;
+  --color-primary: #0088e9;
+  --font-sans: var(--font-ibm-plex);
 }
 
+/* ======== Dark mode ======== */
+:root.dark {
+  --background: #0d1117;
+  --foreground: #ffffff;
+  --color-primary: #0088e9;
+}
+
+/* ======== Mobile safe area ======== */
+@media only screen and (max-width: 768px) {
+  .main {
+    margin-top: calc(60px + env(safe-area-inset-top));
+    margin-bottom: calc(60px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ======== Tailwind Theme Bindings ======== */
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-ibm-plex);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --font-sans: var(--font-ibm-plex);
 }
 
+/* ======== Global Styles ======== */
 body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-ibm-plex), sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-ibm-plex), sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
