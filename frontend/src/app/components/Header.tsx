@@ -15,27 +15,21 @@ export default function Header() {
         const darkPrefers = window.matchMedia(
             "(prefers-color-scheme: dark)"
         ).matches;
-        const isDarkMode = stored === "dark" || (!stored && darkPrefers);
 
-        if (isDarkMode) {
+        if (stored === "dark" || (!stored && darkPrefers)) {
             document.documentElement.classList.add("dark");
             setIsDark(true);
         }
         setTimeout(() => {
-            // Xóa splash screen
             document.getElementById("splash-app")?.remove();
-
-            // Lấy thẻ <meta name="theme-color">
             const metaThemeColor = document.querySelector(
                 'meta[name="theme-color"]'
             );
-
-            // Đặt màu tương ứng với theme
-            const newColor = isDarkMode ? "#0d1117" : "#ffffff";
-
-            // Cập nhật meta tag nếu tìm thấy
             if (metaThemeColor) {
-                metaThemeColor.setAttribute("content", newColor);
+                metaThemeColor.setAttribute(
+                    "content",
+                    isDark ? "#0d1117" : "#ffffff"
+                );
             }
         }, 400);
     }, []);
