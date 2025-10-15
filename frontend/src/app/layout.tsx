@@ -133,12 +133,7 @@ export default function RootLayout({
                 <meta name="apple-mobile-web-app-title" content="Vemo" />
 
                 {/* ===== THEME & PWA ===== */}
-                <meta name="theme-color" content="#000000" />
-                <meta name="msapplication-TileColor" content="#000000" />
-                <meta
-                    name="msapplication-config"
-                    content="/browserconfig.xml"
-                />
+                <meta name="theme-color" content="#0088e9" />
 
                 {/* ===== STRUCTURED DATA ===== */}
                 <script
@@ -168,7 +163,7 @@ export default function RootLayout({
             </head>
             <body className={`${ibmPlex.variable} antialiased`}>
                 <Splash />
-                
+
                 <Header />
                 <main className="main container mx-auto p-4">{children}</main>
                 <Footer />
