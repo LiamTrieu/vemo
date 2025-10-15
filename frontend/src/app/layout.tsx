@@ -1,5 +1,5 @@
-import type {Metadata, Viewport} from "next";
-import {IBM_Plex_Sans} from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
 const ibmPlex = IBM_Plex_Sans({
@@ -12,48 +12,49 @@ export const viewport: Viewport = {
     initialScale: 1,
     width: "device-width",
     viewportFit: "cover",
-}
+};
 
 export const metadata: Metadata = {
-    title: "Vemo – Master 3000 Essential English Words Fast | Free App",
-    description: "Join thousands of users mastering English with Vemo! Smart flashcards, spaced repetition, and fun quizzes. Download now - Free forever!",
+    title: "Vemo – Flashcards thông minh như Anki | Học mọi thứ dễ dàng",
+    description: "Vemo là ứng dụng flashcards PWA giúp bạn ghi nhớ mọi thứ nhanh chóng với spaced repetition như Anki. Học ngôn ngữ, công thức, kiến thức – miễn phí, không giới hạn!",
     generator: "Next.js",
     manifest: "/manifest.json",
-    
+
     // ===== PWA OPTIMIZATION =====
     appleWebApp: {
         capable: true,
         statusBarStyle: "black-translucent",
-        title: "Vemo - Learn English",
+        title: "Vemo Flashcards",
     },
     formatDetection: {
         telephone: false,
     },
-    
-    // ===== SALES & MARKETING OPTIMIZATION =====
-    applicationName: "Vemo English Learning App",
+
+    // ===== SEO & MARKETING =====
+    applicationName: "Vemo Flashcards App",
     authors: [{ name: "Vemo Team" }],
-    creator: "Vemo Education",
+    creator: "Vemo",
     publisher: "Vemo",
     category: "education",
-    classification: "educational software",
-    
+    classification: "flashcards app",
+
     // ===== OPEN GRAPH =====
     openGraph: {
         type: "website",
         url: "https://vemo-app.vercel.app/",
-        title: "Vemo - Master 3000 English Words",
-        description: "Free English learning app with proven results. Download now and start your journey to fluency!",
+        title: "Vemo – Flashcards thông minh như Anki",
+        description:
+            "Ghi nhớ mọi thứ dễ dàng với flashcards thông minh, hệ thống lặp lại ngắt quãng (SRS), đa nền tảng, miễn phí mãi mãi.",
         siteName: "Vemo",
         images: [
             {
                 url: "/icon-1200x630.png",
                 width: 1200,
                 height: 630,
-                alt: "Vemo - Learn 3000 English Words",
+                alt: "Vemo – Flashcards App như Anki",
             },
         ],
-        locale: "en_US",
+        locale: "vi_VN",
     },
 
     // ===== TWITTER =====
@@ -61,29 +62,26 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         site: "@vemo_app",
         creator: "@vemo_app",
-        title: "Vemo - Learn English Free",
-        description: "Master 3000 essential English words with our free app. Download now!",
+        title: "Vemo – Ứng dụng Flashcards miễn phí",
+        description:
+            "Ghi nhớ ngôn ngữ, kiến thức, công thức, từ vựng bằng flashcards & spaced repetition. Miễn phí, đa nền tảng.",
         images: ["/icon-1200x630.png"],
     },
 
     // ===== KEYWORDS =====
     keywords: [
-        "learn English words",
-        "3000 essential English words", 
-        "English vocabulary app",
-        "English flashcards",
-        "learn English PWA",
-        "improve English vocabulary",
-        "study English words",
-        "English learning app",
-        "build English vocabulary fast",
-        "English practice app",
-        "free English app",
-        "English for beginners",
-        "vocabulary builder",
-        "learn English free",
-        "English words daily",
-        "speak English fluently",
+        "Vemo flashcards",
+        "ứng dụng học như Anki",
+        "flashcards PWA",
+        "spaced repetition app",
+        "ôn thi bằng flashcards",
+        "ghi nhớ kiến thức nhanh",
+        "ứng dụng học đa ngôn ngữ",
+        "tạo thẻ ghi nhớ online",
+        "app học từ vựng",
+        "flashcards miễn phí",
+        "anki alternative",
+        "vemo app",
     ],
 
     // ===== ICONS =====
@@ -97,7 +95,7 @@ export const metadata: Metadata = {
         {
             rel: "icon",
             url: "/icon-192x192.png",
-            sizes: "192x192", 
+            sizes: "192x192",
             type: "image/png",
         },
         {
@@ -107,7 +105,6 @@ export const metadata: Metadata = {
         },
     ],
 
-    // ===== OTHER METADATA =====
     robots: "index, follow",
     metadataBase: new URL("https://vemo-app.vercel.app"),
     alternates: {
@@ -116,51 +113,51 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+    children,
+}: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-        <head>
-            {/* ===== ADDITIONAL PWA TAGS ===== */}
-            <meta name="apple-mobile-web-app-capable" content="yes" />
-            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-            <meta name="apple-mobile-web-app-title" content="Vemo" />
-            
-            {/* ===== SALES & CONVERSION TAGS ===== */}
-            <meta name="theme-color" content="#000000" />
-            <meta name="msapplication-TileColor" content="#000000" />
-            <meta name="msapplication-config" content="/browserconfig.xml" />
-            
-            {/* ===== STRUCTURED DATA FOR SEO ===== */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "MobileApplication",
-                        "name": "Vemo - Learn English Words",
-                        "applicationCategory": "EducationalApplication",
-                        "operatingSystem": "Android, iOS, Web",
-                        "description": "Master 3000 essential English words with flashcards and smart practice",
-                        "offers": {
-                            "@type": "Offer",
-                            "price": "0",
-                            "priceCurrency": "USD"
-                        },
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.8",
-                            "ratingCount": "1250"
-                        }
-                    })
-                }}
-            />
-        </head>
-        <body className={`${ibmPlex.variable} antialiased`}>
-            {children}
-        </body>
+        <html lang="vi">
+            <head>
+                {/* ===== PWA META TAGS ===== */}
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+                <meta name="apple-mobile-web-app-title" content="Vemo" />
+
+                {/* ===== THEME & PWA ===== */}
+                <meta name="theme-color" content="#000000" />
+                <meta name="msapplication-TileColor" content="#000000" />
+                <meta name="msapplication-config" content="/browserconfig.xml" />
+
+                {/* ===== STRUCTURED DATA ===== */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "MobileApplication",
+                            "name": "Vemo – Flashcards App",
+                            "applicationCategory": "EducationalApplication",
+                            "operatingSystem": "Android, iOS, Web",
+                            "description": "Ứng dụng flashcards thông minh giúp bạn học mọi thứ với spaced repetition như Anki.",
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "0",
+                                "priceCurrency": "USD",
+                            },
+                            "aggregateRating": {
+                                "@type": "AggregateRating",
+                                "ratingValue": "4.8",
+                                "ratingCount": "2500",
+                            },
+                        }),
+                    }}
+                />
+            </head>
+            <body className={`${ibmPlex.variable} antialiased`}>
+                {children}
+            </body>
         </html>
     );
 }

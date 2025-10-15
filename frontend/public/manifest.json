@@ -1,7 +1,7 @@
 {
   "name": "Vemo",
   "short_name": "Vemo",
-  "description": "Vemo helps you master 3000 essential English words with flashcards and smart practice.",
+  "description": "Vemo là ứng dụng flashcards thông minh giúp bạn học bất kỳ kiến thức nào với spaced repetition – như Anki, nhưng hiện đại hơn.",
   "theme_color": "#0d1117",
   "background_color": "#0d1117",
   "display": "standalone",
