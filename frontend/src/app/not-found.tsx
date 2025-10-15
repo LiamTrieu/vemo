@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center h-[70vh] text-center">
@@ -5,12 +7,12 @@ export default function NotFound() {
       <p className="text-lg text-gray-600 mb-6">
         Oops 😅 Trang bạn tìm không tồn tại hoặc đã bị xóa.
       </p>
-      <a
+      <Link
         href="/"
         className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition"
       >
         Quay về trang chủ
-      </a>
+      </Link>
     </div>
   );
 }
