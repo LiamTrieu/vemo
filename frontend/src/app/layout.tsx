@@ -121,6 +121,24 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const navMenus = [
+        {
+            name: "Bộ thẻ",
+            href: "/flashcards",
+        },
+        {
+            name: "Hướng dẫn",
+            href: "/guides",
+        },
+        {
+            name: "Blog",
+            href: "/blog",
+        },
+        {
+            name: "Giới thiệu",
+            href: "/about",
+        },
+    ];
     return (
         <html lang="vi">
             <head>
@@ -164,9 +182,9 @@ export default function RootLayout({
             <body className={`${ibmPlex.variable} antialiased`}>
                 <Splash />
 
-                <Header />
+                <Header navMenus={navMenus} />
                 <main className="main container mx-auto p-4">{children}</main>
-                <Footer />
+                <Footer navMenus={navMenus} />
             </body>
         </html>
     );

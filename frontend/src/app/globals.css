@@ -3,7 +3,7 @@
 
 /* ======== Biến gốc (Light mode mặc định) ======== */
 :root {
-  --background: #ffffff;
+  --background: #F2F2F7;
   --foreground: #0d1117;
   --color-primary: #0088e9;
   --font-sans: var(--font-ibm-plex);
@@ -12,16 +12,21 @@
 /* ======== Dark mode ======== */
 :root.dark {
   --background: #0d1117;
-  --foreground: #ffffff;
+  --foreground: #F2F2F7;
   --color-primary: #0088e9;
 }
 
-/* ======== Mobile safe area ======== */
-@media only screen and (max-width: 768px) {
-  .main {
-    margin-top: calc(60px + env(safe-area-inset-top));
-    margin-bottom: calc(60px + env(safe-area-inset-bottom));
-  }
+.main {
+  margin-top: calc(64px + env(safe-area-inset-top));
+  margin-bottom: calc(64px + env(safe-area-inset-bottom));
+}
+
+header {
+  padding-top: env(safe-area-inset-top);
+}
+
+footer {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* ======== Tailwind Theme Bindings ======== */
