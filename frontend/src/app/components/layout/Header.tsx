@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, Sun, Moon, BookOpen } from "lucide-react";
+import { Sun, Moon, BookOpen } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -52,16 +52,23 @@ export default function Header({
 
     return (
         <motion.header
-            initial={{ height: 60 }}
             animate={{
-                height: isOpen ? "auto" : 60,
                 borderBottomRightRadius: isOpen ? 16 : 0,
                 borderBottomLeftRadius: isOpen ? 16 : 0,
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`fixed w-full top-0 z-50 bg-transparent backdrop-blur-lg overflow-hidden`}
+            className={`fixed w-full top-0 z-50 bg-transparent backdrop-blur-lg`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+                initial={{ height: 60 }}
+                animate={{
+                    height: isOpen ? "auto" : 60,
+                    borderBottomRightRadius: isOpen ? 16 : 0,
+                    borderBottomLeftRadius: isOpen ? 16 : 0,
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden"
+            >
                 <div className="flex items-center justify-between py-3">
                     {/* Logo */}
                     <Link
@@ -136,16 +143,54 @@ export default function Header({
                                 <Moon size={20} className="text-blue-600" />
                             )}
                         </motion.button>
-
                         <motion.button
                             whileTap={{ scale: 0.8 }}
                             onClick={() => setIsOpen(!isOpen)}
                             className="p-2 rounded-full cursor-pointer bg-white dark:bg-gray-800 shadow-lg"
                         >
-                            <Menu
-                                size={20}
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
                                 className="text-gray-700 dark:text-gray-300"
-                            />
+                            >
+                                {/* Line 1 */}
+                                <motion.path
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    variants={{
+                                        closed: { d: "M2 5L18 5" },
+                                        open: { d: "M4 4L16 16" },
+                                    }}
+                                    animate={isOpen ? "open" : "closed"}
+                                />
+
+                                {/* Line 2 */}
+                                <motion.path
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    variants={{
+                                        closed: { opacity: 1 },
+                                        open: { opacity: 0 },
+                                    }}
+                                    animate={isOpen ? "open" : "closed"}
+                                    d="M2 10L18 10"
+                                />
+
+                                {/* Line 3 */}
+                                <motion.path
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    variants={{
+                                        closed: { d: "M2 15L18 15" },
+                                        open: { d: "M4 16L16 4" },
+                                    }}
+                                    animate={isOpen ? "open" : "closed"}
+                                />
+                            </svg>
                         </motion.button>
                     </div>
                 </div>
@@ -172,7 +217,7 @@ export default function Header({
                         <span className="text-sm">Bắt đầu ngay</span>
                     </Link>
                 </nav>
-            </div>
+            </motion.div>
         </motion.header>
     );
 }
