@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     // ===== OPEN GRAPH =====
     openGraph: {
         type: "website",
-        url: "https://vemo-app.vercel.app/",
+        url: "https://vemoo.vercel.app/",
         title: "Vemo – Flashcards thông minh như Anki",
         description:
             "Ghi nhớ mọi thứ dễ dàng với flashcards thông minh, hệ thống lặp lại ngắt quãng (SRS), đa nền tảng, miễn phí mãi mãi.",
@@ -110,7 +110,7 @@ export const metadata: Metadata = {
     ],
 
     robots: "index, follow",
-    metadataBase: new URL("https://vemo-app.vercel.app"),
+    metadataBase: new URL("https://vemoo.vercel.app"),
     alternates: {
         canonical: "/",
     },
