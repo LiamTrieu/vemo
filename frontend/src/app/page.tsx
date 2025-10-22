@@ -175,7 +175,7 @@ export default function HomePage() {
                   <div>
                     <h4 className="font-semibold">Thêm vào Màn hình chính</h4>
                     <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      Chọn "Thêm vào Màn hình chính"
+                      Chọn &quot;Thêm vào Màn hình chính&quot;
                     </p>
                   </div>
                 </div>
@@ -233,7 +233,7 @@ export default function HomePage() {
                   <div>
                     <h4 className="font-semibold">Cài đặt ứng dụng</h4>
                     <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      Chọn "Cài đặt ứng dụng" hoặc "Thêm vào màn hình chính"
+                      Chọn &quot;Cài đặt ứng dụng&quot; hoặc &quot;Thêm vào màn hình chính&quot;
                     </p>
                   </div>
                 </div>
