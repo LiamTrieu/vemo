@@ -12,7 +12,7 @@ export default function Footer({
     }[];
 }) {
     return (
-        <footer className="mt-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-black border-t border-gray-200/50 dark:border-gray-800/50">
+        <footer className="mt-16 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-950 dark:to-black border-t border-gray-200/50 dark:border-gray-800/50">
             {/* Decorative gradient accent */}
             <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 w-full"></div>
 

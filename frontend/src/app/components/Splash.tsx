@@ -38,7 +38,7 @@ export default function Splash() {
                 width={107}
                 height={81}
                 alt="Vemo Logo"
-                className="mb-4"
+                className="mb-4 w-[107px] h-[81px]"
             />
         </div>
     );

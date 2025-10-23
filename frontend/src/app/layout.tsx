@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Splash from "./components/Splash";
+import RegisterSW from "./register-sw";
 
 const ibmPlex = IBM_Plex_Sans({
     variable: "--font-ibm-plex",
@@ -143,7 +144,7 @@ export default function RootLayout({
         <html lang="vi">
             <head>
                 {/* ===== PWA META TAGS ===== */}
-                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="mobile-web-app-capable" content="yes"/>
                 <meta
                     name="apple-mobile-web-app-status-bar-style"
                     content="black-translucent"
@@ -180,6 +181,7 @@ export default function RootLayout({
                 />
             </head>
             <body className={`${ibmPlex.variable} antialiased`}>
+                <RegisterSW />
                 <Splash />
 
                 <Header navMenus={navMenus} />

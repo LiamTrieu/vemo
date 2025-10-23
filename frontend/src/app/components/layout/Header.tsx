@@ -91,7 +91,7 @@ export default function Header({
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-all duration-300 hover:-translate-y-0.5"
+                                className="hover:text-primary font-medium transition-all duration-300 hover:-translate-y-0.5"
                             >
                                 {item.name}
                             </Link>
@@ -152,7 +152,6 @@ export default function Header({
                                 width="20"
                                 height="20"
                                 viewBox="0 0 20 20"
-                                className="text-gray-700 dark:text-gray-300"
                             >
                                 {/* Line 1 */}
                                 <motion.path
@@ -202,7 +201,7 @@ export default function Header({
                             key={item.href}
                             href={item.href}
                             onClick={() => setIsOpen(false)}
-                            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-all"
+                            className="hover:text-primary font-medium transition-all"
                         >
                             {item.name}
                         </Link>
