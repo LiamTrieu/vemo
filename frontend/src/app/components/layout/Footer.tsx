@@ -25,6 +25,7 @@ export default function Footer({
                             className="flex items-center gap-2 font-bold text-xl"
                         >
                             <Image
+                                priority
                                 width={43}
                                 height={32}
                                 src="/icon-layout.webp"

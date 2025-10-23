@@ -3,6 +3,7 @@ import iosFrame from "@/assets/iosFrame.png";
 import androidFrame from "@/assets/androidFrame.png";
 import Image from "next/image";
 import { EllipsisVertical } from "lucide-react";
+import InstallButton from "./InstallButton";
 
 export default function PWAInstallationGuide() {
     return (
@@ -121,6 +122,8 @@ export default function PWAInstallationGuide() {
                             />
 
                             <Image
+                                fill
+                                priority
                                 src={iosFrame}
                                 alt="PWA Installation Guide"
                                 className="absolute inset-0 w-full h-full pointer-events-none"
@@ -147,7 +150,7 @@ export default function PWAInstallationGuide() {
                             </div>
                             <h3 className="text-2xl font-bold">Cho Android</h3>
                         </div>
-
+                        <InstallButton/>
                         <div className="space-y-4">
                             <div className="flex items-start space-x-3">
                                 <div className="w-6 h-6 bg-gradient-to-br from-primary to-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mt-1">
@@ -201,9 +204,8 @@ export default function PWAInstallationGuide() {
                                 <div>
                                     <h4 className="font-semibold">Cài đặt</h4>
                                     <p className="text-sm">
-                                        Nhấn{" "}
+                                        Chọn{" "}
                                         <b className="text-green-500">Cài đặt</b>{" "}
-                                        để hoàn tất
                                     </p>
                                 </div>
                             </div>

@@ -76,6 +76,7 @@ export default function Header({
                         className="flex items-center gap-2 font-bold text-xl"
                     >
                         <Image
+                            priority
                             width={43}
                             height={32}
                             src="/icon-layout.webp"
@@ -148,11 +149,7 @@ export default function Header({
                             onClick={() => setIsOpen(!isOpen)}
                             className="p-2 rounded-full cursor-pointer bg-white dark:bg-gray-800 shadow-lg"
                         >
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 20 20"
-                            >
+                            <svg width="20" height="20" viewBox="0 0 20 20">
                                 {/* Line 1 */}
                                 <motion.path
                                     stroke="currentColor"
