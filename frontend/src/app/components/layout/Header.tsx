@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Sun, Moon, BookOpen } from "lucide-react";
+import { Sun, Moon, BookOpen, Download } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -118,7 +118,6 @@ export default function Header({
                                 />
                             )}
                         </button>
-
                         <Link
                             href="/get-started"
                             className="group flex items-center gap-3 px-4 py-2 rounded-2xl bg-gradient-to-r from-primary to-purple-500 text-white font-semibold hover:-translate-y-0.5 transition-all duration-300"
@@ -152,6 +151,7 @@ export default function Header({
                             <svg width="20" height="20" viewBox="0 0 20 20">
                                 {/* Line 1 */}
                                 <motion.path
+                                    initial={{ d: "M2 5L18 5" }}
                                     stroke="currentColor"
                                     strokeWidth="2"
                                     strokeLinecap="round"
@@ -164,6 +164,7 @@ export default function Header({
 
                                 {/* Line 2 */}
                                 <motion.path
+                                    initial={{ opacity: 1 }}
                                     stroke="currentColor"
                                     strokeWidth="2"
                                     strokeLinecap="round"
@@ -177,6 +178,7 @@ export default function Header({
 
                                 {/* Line 3 */}
                                 <motion.path
+                                    initial={{ d: "M2 15L18 15" }}
                                     stroke="currentColor"
                                     strokeWidth="2"
                                     strokeLinecap="round"
