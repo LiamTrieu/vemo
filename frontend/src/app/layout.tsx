@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         siteName: "Vemo",
         images: [
             {
-                url: "/icon-1200x630.png",
+                url: "/icon-512x512.png",
                 width: 1200,
                 height: 630,
                 alt: "Vemo – Flashcards App như Anki",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
         title: "Vemo – Ứng dụng Flashcards miễn phí",
         description:
             "Ghi nhớ ngôn ngữ, kiến thức, công thức, từ vựng bằng flashcards & spaced repetition. Miễn phí, đa nền tảng.",
-        images: ["/icon-1200x630.png"],
+        images: ["/icon-512x512.png"],
     },
 
     // ===== KEYWORDS =====

@@ -12,6 +12,9 @@
   "dir": "ltr",
   "lang": "vi",
   "categories": ["education", "productivity"],
+  "display_override": ["window-controls-overlay"],
+  "prefer_related_applications": false,
+  "related_applications": [],
   "features": [
     "Học flashcards với spaced repetition",
     "Đồng bộ đa nền tảng",
@@ -19,12 +22,9 @@
     "Tốc độ mượt, tối ưu cho học tập",
     "Giao diện hiện đại và tối giản"
   ],
-  "display_override": ["window-controls-overlay"],
   "launch_handler": {
     "client_mode": "navigate-existing"
   },
-  "prefer_related_applications": false,
-  "related_applications": [],
   "icons": [
     {
       "src": "/icon-192x192.png",
@@ -53,7 +53,16 @@
   ],
   "screenshots": [
     {
-      "src": "/screenshot-1.png"
+      "src": "/screenshot-wide-1.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-narrow-1.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow"
     }
   ],
   "shortcuts": [
@@ -69,5 +78,15 @@
         }
       ]
     }
-  ]
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+vemo",
+      "url": "/start?card=%s"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 420
+  },
+  "iarc_rating_id": "pending"
 }
