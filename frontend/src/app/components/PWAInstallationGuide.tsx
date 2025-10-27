@@ -7,7 +7,6 @@ import androidFrame from "@/assets/androidFrame.png";
 import { AnimatePresence, motion } from "framer-motion";
 import Card from "./Card";
 import { ArrowBigDownDash } from "lucide-react";
-import { userAgent } from "next/server";
 
 const GUIDE_CONFIG = {
     ios: {
@@ -35,9 +34,9 @@ const GUIDE_CONFIG = {
             "https://res.cloudinary.com/dioxktgsm/image/upload/v1761193178/ios_owd3lj.gif",
         steps: [
             ["Mở Chrome", "Truy cập vemoo.vercel.app trên Chrome"],
-            ["Nhấn menu", "Mở menu ở góc phải trình duyệt"],
-            ["Thêm vào Màn hình chính", "Chọn Thêm vào Màn hình chính"],
-            ["Cài đặt", "Nhấn Cài đặt để hoàn tất"],
+            ["Nhấn nút", "Nhấn nút Cài đặt ở phía trên"],
+            ["Cài đặt", "Nhấn Cài đặt"],
+            ["Thêm vào Màn hình chính", "Chọn Thêm vào Màn hình chính để hoàn tất"],
         ] as [string, string][],
     },
 };
