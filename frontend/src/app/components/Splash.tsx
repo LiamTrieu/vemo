@@ -32,9 +32,9 @@ export default function Splash() {
     if (hide) return null;
 
     return (
-        <div className="fixed inset-0 bg-primary flex flex-col justify-center items-center z-100">
+        <div className="fixed inset-0 bg-gradient-to-b from-primary to-blue-600 flex flex-col justify-center items-center z-100">
             <Image
-                src="/icon-layout.png"
+                src="/icon-layout.webp"
                 width={107}
                 height={81}
                 alt="Vemo Logo"
