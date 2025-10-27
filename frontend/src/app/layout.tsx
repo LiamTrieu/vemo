@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 import Splash from "./components/Splash";
+import RegisterSW from "./register-sw";
 
 const ibmPlex = IBM_Plex_Sans({
     variable: "--font-ibm-plex",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     // ===== OPEN GRAPH =====
     openGraph: {
         type: "website",
-        url: "https://vemo-app.vercel.app/",
+        url: "https://vemoo.vercel.app/",
         title: "Vemo – Flashcards thông minh như Anki",
         description:
             "Ghi nhớ mọi thứ dễ dàng với flashcards thông minh, hệ thống lặp lại ngắt quãng (SRS), đa nền tảng, miễn phí mãi mãi.",
@@ -110,7 +111,7 @@ export const metadata: Metadata = {
     ],
 
     robots: "index, follow",
-    metadataBase: new URL("https://vemo-app.vercel.app"),
+    metadataBase: new URL("https://vemoo.vercel.app"),
     alternates: {
         canonical: "/",
     },
@@ -121,11 +122,29 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const navMenus = [
+        {
+            name: "Bộ thẻ",
+            href: "/flashcards",
+        },
+        {
+            name: "Hướng dẫn",
+            href: "/guides",
+        },
+        {
+            name: "Blog",
+            href: "/blog",
+        },
+        {
+            name: "Giới thiệu",
+            href: "/about",
+        },
+    ];
     return (
         <html lang="vi">
             <head>
                 {/* ===== PWA META TAGS ===== */}
-                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="mobile-web-app-capable" content="yes"/>
                 <meta
                     name="apple-mobile-web-app-status-bar-style"
                     content="black-translucent"
@@ -162,11 +181,12 @@ export default function RootLayout({
                 />
             </head>
             <body className={`${ibmPlex.variable} antialiased`}>
+                <RegisterSW />
                 <Splash />
 
-                <Header />
+                <Header navMenus={navMenus} />
                 <main className="main container mx-auto p-4">{children}</main>
-                <Footer />
+                <Footer navMenus={navMenus} />
             </body>
         </html>
     );
