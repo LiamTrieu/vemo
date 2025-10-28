@@ -5,7 +5,6 @@ import Image, { StaticImageData } from "next/image";
 import iosFrame from "@/assets/iosFrame.png";
 import androidFrame from "@/assets/androidFrame.png";
 import { AnimatePresence, motion } from "framer-motion";
-import Card from "./Card";
 import { ArrowBigDownDash } from "lucide-react";
 
 const GUIDE_CONFIG = {
@@ -401,7 +400,7 @@ export default function PWAInstallationGuide() {
                                 transition={{ duration: 0.3 }}
                                 className="mt-8 w-full"
                             >
-                                <Card>
+                                <div className="bg-gradient-to-br from-gray-50 via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-black rounded-2xl p-6 shadow-lg">
                                     <div className="flex justify-between mb-6">
                                         <div className="flex items-center">
                                             <div
@@ -463,7 +462,7 @@ export default function PWAInstallationGuide() {
                                         onClick={handleOpenModalOnMobile}
                                         color={cfg.color}
                                     />
-                                </Card>
+                                </div>
                             </motion.div>
                         </div>
                     </div>
