@@ -29,7 +29,7 @@ export default function Footer({
                 alt="Vemo Logo"
                 className="invert filter transition dark:invert-0"
               />
-              -----------------------------
+              Vemo
             </Link>
 
             <p className="max-w-md text-lg leading-relaxed text-gray-600 dark:text-gray-400">
