@@ -3,18 +3,41 @@
 
 /* ======== Biến gốc (Light mode mặc định) ======== */
 :root {
-  --background: #F2F2F7;
-  --foreground: #0d1117;
-  --color-primary: #0088e9;
+  --background: #F5F7FB;
+  /* Nền nhẹ hơi ám xanh, không trắng tinh */
+  --foreground: #0C111A;
+  /* Chữ chính, tone xanh xám nhẹ, cân với dark foreground */
+  --color-primary: #0088E9;
+  /* Giữ nguyên – xanh hiện đại */
+  --color-secondary: #006DCC;
+  /* Hover / accent nhẹ */
+  --muted: #697586;
+  /* Màu chữ phụ, nhấn tinh tế */
+  --border: #C7D0DD;
+  /* Viền nhẹ, dễ chịu hơn #D0D4DA */
+  --surface: #FFFFFF;
+  /* Nền card hoặc panel sáng nhưng giữ độ nổi */
   --font-sans: var(--font-ibm-plex);
 }
 
 /* ======== Dark mode ======== */
 :root.dark {
-  --background: #0d1117;
-  --foreground: #F2F2F7;
+  --background: #111022;
+  /* nền chính - vẫn giữ */
+  --foreground: #E4E6EB;
+  /* chữ chính, sáng hơn 1 chút cho dễ đọc */
   --color-primary: #0088e9;
+  /* màu nhấn giữ nguyên */
+  --color-secondary: #00B8D9;
+  /* xanh ngọc phụ - hợp với primary */
+  --muted: #8A8FA3;
+  /* màu chữ phụ, mô tả, placeholder */
+  --border: #3C3C77;
+  /* viền nhẹ, phân tách section */
+  --surface: #12122B;
+  /* nền card, navbar, panel */
 }
+
 
 .main {
   margin-top: calc(60px + env(safe-area-inset-top));
@@ -34,6 +57,10 @@ footer {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
   --font-sans: var(--font-ibm-plex);
 }
 
@@ -62,4 +89,20 @@ body {
 
 .animate-hidden-splash {
   animation: hidden-splash 1s ease-in-out 0.4s forwards;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

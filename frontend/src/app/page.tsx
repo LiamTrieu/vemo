@@ -1,9 +1,9 @@
-import PWAInstallationGuide from "./components/PWAInstallationGuide";
+import PWAInstallationGuide from './components/PWAInstallationGuide';
 
 export default function HomePage() {
   return (
     <div>
-      <PWAInstallationGuide/>
+      <PWAInstallationGuide />
     </div>
   );
 }

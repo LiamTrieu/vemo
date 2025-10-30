@@ -11,11 +11,9 @@ export default function Footer({
   }[];
 }) {
   return (
-    <footer className="mt-16 border-t border-gray-200/50 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:border-gray-800/50 dark:from-gray-900 dark:via-gray-950 dark:to-black">
-      {/* Decorative gradient accent */}
-      <div className="h-1 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
-
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <footer>
+      <div className="my-0 h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent md:my-8 dark:via-gray-700" />
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-4">
           {/* Brand Section */}
           <div className="col-span-1 space-y-4 md:col-span-2">
@@ -76,9 +74,9 @@ export default function Footer({
         </div>
 
         {/* Social & Copyright Section */}
-        <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-800">
+        <div>
           <div className="flex flex-col items-center justify-between gap-4 lg:flex-row">
-            <div className="flex flex-col items-center gap-4 md:flex-row">
+            <div className="mt-10 flex flex-col items-center gap-4 md:flex-row">
               {/* Social Links */}
               <div className="flex items-center gap-4">
                 {/* Facebook (SVG) */}
@@ -148,13 +146,6 @@ export default function Footer({
                 <Coffee size={20} className="transition-transform group-hover:scale-110" />
                 <span>Buy me a coffee</span>
               </Link>
-            </div>
-
-            {/* Copyright */}
-            <div className="text-center lg:text-right">
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                © {new Date().getFullYear()} Vemo. All rights reserved.
-              </p>
             </div>
           </div>
         </div>
