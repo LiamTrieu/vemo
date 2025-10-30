@@ -1,8 +1,8 @@
-const withPWA = require("@ducanh2912/next-pwa").default({
-  dest: "public",
+const withPWA = require('@ducanh2912/next-pwa').default({
+  dest: 'public',
   register: true,
   skipWaiting: true,
-  disable: process.env.NODE_ENV === "development",
+  disable: false,
 });
 
 module.exports = withPWA({
@@ -11,8 +11,8 @@ module.exports = withPWA({
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
       },
     ],
   },
