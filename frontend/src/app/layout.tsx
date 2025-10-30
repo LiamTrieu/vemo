@@ -4,7 +4,7 @@ import './globals.css';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Splash from './components/Splash';
-import { headers } from 'next/headers';
+import { cookies } from 'next/headers';
 
 const ibmPlex = IBM_Plex_Sans({
   variable: '--font-ibm-plex',
@@ -117,7 +117,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -140,9 +140,9 @@ export default async function RootLayout({
       href: '/about',
     },
   ];
-  const theme = (await headers()).get('x-theme') || 'light';
+
   return (
-    <html lang="vi" className={theme === 'dark' ? 'dark' : ''}>
+    <html lang="vi">
       <head>
         {/* ===== PWA META TAGS ===== */}
         <meta name="mobile-web-app-capable" content="yes" />
@@ -150,7 +150,9 @@ export default async function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Vemo" />
 
         {/* ===== THEME & PWA ===== */}
-        <meta name="theme-color" content={theme === 'dark' ? '#111022' : '#F5F7FB'} />
+        {/* Theme sẽ được xử lý bởi client-side script */}
+        <meta name="theme-color" content="#F5F7FB" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#111022" media="(prefers-color-scheme: dark)" />
 
         {/* ===== STRUCTURED DATA ===== */}
         <script
@@ -177,10 +179,26 @@ export default async function RootLayout({
             }),
           }}
         />
+
+        {/* Script để xử lý theme từ cookie/server-side */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = document.cookie.match(/theme=(dark|light)/)?.[1] || 
+                              (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                  document.documentElement.classList.toggle('dark', theme === 'dark');
+                } catch (e) {
+                  console.log('Theme detection error:', e);
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body className={`${ibmPlex.variable} antialiased`}>
         <Splash />
-
         <Header navMenus={navMenus} />
         <main className="main container mx-auto p-4">{children}</main>
         <Footer navMenus={navMenus} />

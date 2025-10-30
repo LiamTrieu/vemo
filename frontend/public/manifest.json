@@ -73,8 +73,8 @@
       "url": "/start",
       "icons": [
         {
-          "src": "/icon-256x256.png",
-          "sizes": "256x256"
+          "src": "/icon-512x512.png",
+          "sizes": "512x512"
         }
       ]
     }
