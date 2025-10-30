@@ -150,9 +150,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Vemo" />
 
         {/* ===== THEME & PWA ===== */}
-        {/* Theme sẽ được xử lý bởi client-side script */}
-        <meta name="theme-color" content="#F5F7FB" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#111022" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#111022" />
 
         {/* ===== STRUCTURED DATA ===== */}
         <script
@@ -186,9 +184,13 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var theme = document.cookie.match(/theme=(dark|light)/)?.[1] || 
+                  const theme = document.cookie.match(/theme=(dark|light)/)?.[1] || 
                               (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
                   document.documentElement.classList.toggle('dark', theme === 'dark');
+                  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+                  if (metaThemeColor) {
+                    metaThemeColor.setAttribute('content', theme === 'dark' ? '#111022' : '#F5F7FB');
+                  }
                 } catch (e) {
                   console.log('Theme detection error:', e);
                 }
