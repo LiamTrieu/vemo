@@ -67,7 +67,7 @@ export default function Header({
           borderBottomLeftRadius: isOpen ? 16 : 0,
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6 lg:px-8"
+        className="container mx-auto overflow-hidden px-4"
       >
         <div className="flex items-center justify-between py-3">
           {/* Logo */}

@@ -13,7 +13,7 @@ export default function Footer({
   return (
     <footer>
       <div className="my-0 h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent md:my-8 dark:via-gray-700" />
-      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-4">
           {/* Brand Section */}
           <div className="col-span-1 space-y-4 md:col-span-2">
