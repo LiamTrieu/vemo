@@ -2,8 +2,7 @@ const withPWA = require('@ducanh2912/next-pwa').default({
   dest: 'public',
   register: true,
   skipWaiting: true,
-  disable: true,
-  publicExcludes: ['!manifest.json'],
+  disable: false,
 });
 
 module.exports = withPWA({
