@@ -44,3 +44,22 @@ body {
   font-family: var(--font-ibm-plex), sans-serif;
   transition: background-color 0.3s, color 0.3s;
 }
+
+@keyframes hidden-splash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.animate-hidden-splash {
+  animation: hidden-splash 1s ease-in-out 0.4s forwards;
+}

@@ -1,8 +1,6 @@
-'use client';
 import { Coffee } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function Footer({
   navMenus,
@@ -12,15 +10,8 @@ export default function Footer({
     href: string;
   }[];
 }) {
-  const [isWait, setIsWait] = useState(true);
-  setTimeout(() => {
-    setIsWait(false);
-  }, 300);
-  if (isWait) {
-    return null;
-  }
   return (
-    <footer className="z-0 mt-16 border-t border-gray-200/50 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:border-gray-800/50 dark:from-gray-900 dark:via-gray-950 dark:to-black">
+    <footer className="mt-16 border-t border-gray-200/50 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:border-gray-800/50 dark:from-gray-900 dark:via-gray-950 dark:to-black">
       {/* Decorative gradient accent */}
       <div className="h-1 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
 
@@ -30,12 +21,11 @@ export default function Footer({
           <div className="col-span-1 space-y-4 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 text-xl font-bold">
               <Image
-                priority
-                width={43}
+                src="/icon-512x512.png"
+                width={32}
                 height={32}
-                src="/icon-layout.webp"
                 alt="Vemo Logo"
-                className="invert filter transition dark:invert-0"
+                className="rounded-full"
               />
               Vemo
             </Link>

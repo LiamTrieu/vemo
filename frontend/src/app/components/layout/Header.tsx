@@ -27,9 +27,9 @@ export default function Header({
     }
   }, []);
 
-  const toggleTheme = () => {
-    const root = document.documentElement;
+  const toggleTheme = async () => {
     const nextIsDark = !isDark;
+    const root = document.documentElement;
 
     if (nextIsDark) root.classList.add('dark');
     else root.classList.remove('dark');
@@ -41,6 +41,13 @@ export default function Header({
     if (metaThemeColor) {
       metaThemeColor.setAttribute('content', nextIsDark ? '#0d1117' : '#F2F2F7');
     }
+
+    // Ghi vào cookie để SSR đọc
+    await fetch('/api/theme', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ theme: nextIsDark ? 'dark' : 'light' }),
+    });
   };
 
   return (
@@ -66,12 +73,11 @@ export default function Header({
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 text-xl font-bold">
             <Image
-              priority
-              width={43}
+              src="/icon-512x512.png"
+              width={32}
               height={32}
-              src="/icon-layout.webp"
               alt="Vemo Logo"
-              className="invert filter transition dark:invert-0"
+              className="rounded-full"
             />
             Vemo
           </Link>
