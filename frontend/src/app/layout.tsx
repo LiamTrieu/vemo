@@ -141,44 +141,6 @@ export default async function RootLayout({
     },
   ];
   const theme = (await headers()).get('x-theme') || 'light';
-  const effects = [
-    // Trên trái - tím (chủ đạo)
-    {
-      className:
-        'absolute top-[20px] left-[-220px] -z-10 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle_at_center,_#8B5CF6_0%,_#7C3AED_20%,_transparent_70%)] opacity-50 blur-[120px]',
-    },
-    // Trên phải - xanh dương
-    {
-      className:
-        'absolute top-[0px] right-[-180px] -z-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_center,_#3B82F6_0%,_#2563EB_25%,_transparent_75%)] opacity-40 blur-[110px]',
-    },
-    // Trung tâm - xanh ngọc (tạo điểm nhấn trung tâm)
-    {
-      className:
-        'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[650px] w-[650px] rounded-full bg-[radial-gradient(circle_at_center,_#06B6D4_0%,_#0891B2_15%,_transparent_65%)] opacity-30 blur-[150px]',
-    },
-    // Dưới trái - xanh lá
-    {
-      className:
-        'absolute bottom-[-150px] left-[-200px] -z-10 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_at_center,_#10B981_0%,_#059669_20%,_transparent_75%)] opacity-35 blur-[120px]',
-    },
-    // Dưới phải - hồng
-    {
-      className:
-        'absolute bottom-[-180px] right-[-220px] -z-10 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle_at_center,_#EC4899_0%,_#DB2777_20%,_transparent_70%)] opacity-45 blur-[130px]',
-    },
-    // Thêm điểm sáng trung tâm phụ
-    {
-      className:
-        'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle_at_center,_#60A5FA_0%,_transparent_70%)] opacity-20 blur-[80px]',
-    },
-    // Ánh sáng viền tổng thể
-    {
-      className:
-        'absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_50%,_rgba(120,119,198,0.1)_0%,_transparent_60%)]',
-    },
-  ];
-
   return (
     <html lang="vi" className={theme === 'dark' ? 'dark' : ''}>
       <head>
@@ -216,10 +178,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className={`${ibmPlex.variable} relative overflow-x-hidden antialiased`}>
-        {effects.map((circle, index) => (
-          <div key={index} className={circle.className}></div>
-        ))}
+      <body className={`${ibmPlex.variable} antialiased`}>
         <Splash />
 
         <Header navMenus={navMenus} />

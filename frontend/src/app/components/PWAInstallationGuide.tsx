@@ -164,6 +164,7 @@ const PhonePreview: React.FC<{
           className="rounded-[35px] object-cover"
           src={videoSrc}
           alt="PWA Installation Guide"
+          priority
         />
         <Image
           fill
@@ -171,6 +172,7 @@ const PhonePreview: React.FC<{
           alt="Device Frame"
           className="pointer-events-none absolute inset-0"
           sizes="(max-width: 768px) 100vw, 50vw"
+          priority
         />
       </div>
     </div>
@@ -268,12 +270,14 @@ function VideoModal({
                       className="rounded-[35px] object-cover"
                       src={videoSrc}
                       alt="PWA Installation Guide"
+                      priority
                     />
                     <Image
                       fill
                       src={frame}
                       alt="Device Frame"
                       className="pointer-events-none absolute inset-0"
+                      priority
                     />
                   </div>
                   <div className="mt-4">
