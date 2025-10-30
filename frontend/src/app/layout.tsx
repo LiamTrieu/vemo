@@ -93,13 +93,13 @@ export const metadata: Metadata = {
   icons: [
     {
       rel: 'apple-touch-icon',
-      url: '/icon-192x192.png',
+      url: '/icon-512x512.png',
       sizes: '192x192',
       type: 'image/png',
     },
     {
       rel: 'icon',
-      url: '/icon-192x192.png',
+      url: '/icon-512x512.png',
       sizes: '192x192',
       type: 'image/png',
     },

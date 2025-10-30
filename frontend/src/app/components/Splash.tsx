@@ -9,6 +9,7 @@ export default function Splash() {
         height={150}
         alt="Vemo Logo"
         className="rounded-full"
+        priority
       />
     </div>
   );

@@ -78,6 +78,7 @@ export default function Header({
               height={32}
               alt="Vemo Logo"
               className="rounded-full"
+              priority
             />
             Vemo
           </Link>

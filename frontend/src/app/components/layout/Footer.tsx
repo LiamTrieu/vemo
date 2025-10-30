@@ -24,6 +24,7 @@ export default function Footer({
                 height={32}
                 alt="Vemo Logo"
                 className="rounded-full"
+                priority
               />
               Vemo
             </Link>
