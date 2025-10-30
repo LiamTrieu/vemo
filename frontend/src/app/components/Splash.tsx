@@ -19,7 +19,7 @@ export default function Splash() {
       if (metaThemeColor) {
         metaThemeColor.setAttribute('content', isDarkMode ? '#0d1117' : '#F2F2F7');
       }
-    }, 40000);
+    }, 400);
   }, []);
 
   if (hide) return null;

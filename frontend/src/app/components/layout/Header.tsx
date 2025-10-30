@@ -73,7 +73,7 @@ export default function Header({
               alt="Vemo Logo"
               className="invert filter transition dark:invert-0"
             />
-            Vemo
+            +++++++++++++++++++++
           </Link>
 
           {/* Desktop Navigation */}
