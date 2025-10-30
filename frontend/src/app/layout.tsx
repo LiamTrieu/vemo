@@ -150,7 +150,7 @@ export default async function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Vemo" />
 
         {/* ===== THEME & PWA ===== */}
-        <meta name="theme-color" content={theme === 'dark' ? '#0d1117' : '#F2F2F7'} />
+        <meta name="theme-color" content={theme === 'dark' ? '#111022' : '#F5F7FB'} />
 
         {/* ===== STRUCTURED DATA ===== */}
         <script

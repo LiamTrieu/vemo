@@ -39,7 +39,7 @@ export default function Header({
 
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
-      metaThemeColor.setAttribute('content', nextIsDark ? '#0d1117' : '#F2F2F7');
+      metaThemeColor.setAttribute('content', nextIsDark ? '#111022' : '#F5F7FB');
     }
 
     // Ghi vào cookie để SSR đọc
