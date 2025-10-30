@@ -2,30 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Header from './layout/Header';
-import Footer from './layout/Footer';
 
-export default function Splash({ children }: { children: React.ReactNode }) {
+export default function Splash() {
   const [hide, setHide] = useState(false);
-
-  const navMenus = [
-    {
-      name: 'Bộ thẻ',
-      href: '/flashcards',
-    },
-    {
-      name: 'Hướng dẫn',
-      href: '/guides',
-    },
-    {
-      name: 'Blog',
-      href: '/blog',
-    },
-    {
-      name: 'Giới thiệu',
-      href: '/about',
-    },
-  ];
 
   useEffect(() => {
     const stored = localStorage.getItem('theme');
@@ -43,14 +22,7 @@ export default function Splash({ children }: { children: React.ReactNode }) {
     }, 400);
   }, []);
 
-  if (hide)
-    return (
-      <>
-        <Header navMenus={navMenus} />
-        <main className="main container mx-auto p-4">{children}</main>
-        <Footer navMenus={navMenus} />
-      </>
-    );
+  if (hide) return null;
 
   return (
     <div className="from-primary fixed inset-0 z-100 flex flex-col items-center justify-center bg-gradient-to-b to-blue-600">
