@@ -7,7 +7,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/start",
+  "start_url": "/",
   "id": "/",
   "dir": "ltr",
   "lang": "vi",

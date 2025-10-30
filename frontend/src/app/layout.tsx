@@ -142,7 +142,7 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="vi">
+    <html lang="vi" suppressHydrationWarning>
       <head>
         {/* ===== PWA META TAGS ===== */}
         <meta name="mobile-web-app-capable" content="yes" />
